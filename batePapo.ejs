@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Bate-Papo</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Bate-Papo</h1>
+
+
+    <% if (error) { %>
+      <p style="color: red;"><%= error %></p>
+    <% } %>
+
+    <div id="mensagens">
+      <% mensagens.forEach(msg => { %>
+        <div class="mensagem">
+          <strong><%= msg.usuario %>: </strong><%= msg.mensagem %>
+          <small><%= msg.data %></small>
+        </div>
+      <% }); %>
+    </div>
+
+    <form action="/mensagens/batePapo" method="POST">
+      <label for="usuario">Usuário:</label>
+      <select name="usuario" id="usuario" required>
+        <% usuarios.forEach(user => { %>
+          <option value="<%= user.nickname %>"><%= user.nickname %></option>
+        <% }); %>
+      </select>
+
+      <label for="mensagem">Mensagem:</label>
+      <input type="text" name="mensagem" id="mensagem" placeholder="Digite sua mensagem" required>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </div>
+</body>
+</html>

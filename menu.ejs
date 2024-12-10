@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Menu</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .menu-container {
+      max-width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #ffffff;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .menu-container h1 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .menu-container p {
+      color: #666;
+      font-size: 14px;
+      margin-bottom: 30px;
+    }
+
+    .menu-container a {
+      display: inline-block;
+      text-decoration: none;
+      background-color: #2a9d8f;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin: 10px;
+      font-size: 16px;
+    }
+
+    .menu-container a:hover {
+      background-color: #21867a;
+    }
+
+    .menu-container .logout {
+      background-color: #e63946;
+    }
+
+    .menu-container .logout:hover {
+      background-color: #d62839;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-container">
+    <h1>Bem-vindo(a) ao Sistema de Bate-Papo</h1>
+
+    <p>Último acesso: <%= ultimoAcesso %></p>
+
+
+    <a href="/usuarios/cadastro">Cadastro de Usuários</a>
+    <a href="/mensagens/batePapo">Ir para o Bate-Papo</a>
+    <a href="/logout" class="logout">Sair</a>
+  </div>
+</body>
+</html>
